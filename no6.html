@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <form action="" id="form">
+            <input type="text" id ="Search" placeholder="Search" >
+            <button type="submit" id="submit">Cari</button>
+        </form>
+        <div style="margin-top: 40px;">
+            <p id="output">Cari Sesuatu...</p>
+        </div>
+    </div>
+    
+    <script>
+        let SearchInput = document.getElementById('Search');
+        let output = document.getElementById('output');
+        document.querySelector("form").addEventListener("submit", function(e){
+            event.preventDefault();
+            let SearchValue = SearchInput.value;
+                output.innerHTML = `Mencari data <span style = "color: blue;">${SearchValue}</span>...`;
+            // output.textContent = "Mencari Data " + SearchValue;
+        })
+        // const form = document.getElementById('form');
+        // const output = document.getElementById('output');
+        // const SearchInput = document.getElementById('Search');
+        // form.addEventListener('submit', function(e){
+        //     e.preventDefault();
+        //     const userInput = SearchInput.value;
+        // });
+
+    </script>
+</body>
+</html>

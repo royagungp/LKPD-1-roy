@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="radio" name="status" id="Idup" value="Idup" onclick="ChangeForm(this)">
+        <label for="">Masih Hidup</label><br>
+        <input type="radio" name="status" id="die" value="die" onclick="ChangeForm(this)">
+        <label for="">Meninggal</label><br>
+        <input type="radio" name="status" id="unknown" value="unknown" onclick="ChangeForm(this)">
+        <label for="">Tidak diketahui</label><br>
+        <div class="Hidup-Mati">
+                <label for="">Pendidikan</label>
+                <select>
+                    <option value="" disabled selected>Pilih Pendidikan</option>
+                    <option value="PNS">SD</option>
+                    <option value="Wirausaha">SMP</option>
+                    <option value="Swasta">SMK</option>
+                    <option value="Nganggur">Kuliah</option>
+                </select>
+            <label for="">Nama Ayah</label>
+            <input type="text" placeholder="Masukkan Nama Ayah">
+            <label for="">Pilih pekerjaan</label>
+            <select>
+                <option value="" disabled selected>Pilih Pekerjaan</option>
+                <option value="PNS">PNS</option>
+                <option value="Wirausaha">Wirausaha</option>
+                <option value="Swasta">Swasta</option>
+                <option value="Nganggur">Pengangguran</option>
+            </select>
+            <label for="">Deskripsi Pekerjaan</label>
+            <input type="text" placeholder="Deskripsi Pekerjaan">
+            <label for="">Penghasilan</label>
+            <input type="text" id="dengan-rupiah" >
+        </div>
+
+        <div id="detail-semasa-hidup">
+            <label  for="">Detail Ayah Bekerja Berapa lama sudah bekerja,kondisi kesehatan dan apa karir profesinya</label>
+            <input  type="text" placeholder="Detail ayah bekerja/berapa lama bekerja">
+        </div>
+
+        <div id="detail-pekerjaan-mati" style="display: none;">
+            <label  for="">Detail Pekerjaan ayah semasa hidup?</label>
+            <input  type="text" placeholder="Detail ayah bekerja/berapa lama bekerja">
+        </div>
+    </div>
+
+        <div id="wrapper"></div>
+    </form>
+
+    <script>
+        function ChangeForm(e) {
+            const detailkerja = document.getElementById('detail-semasa-hidup')
+            const hidupMatiDiv = document.querySelector('.Hidup-Mati');
+            const Wrapper = document.getElementById('wrapper');
+            const detailkerja2=document.getElementById("detail-pekerjaan-mati")
+
+     if (hidupMatiDiv) {
+
+
+
+        
+            if (e.value === "Idup") {
+          hidupMatiDiv.style.display = "block";
+                Wrapper.style.display = "block";
+                detailkerja.style.display = "block"
+                  detailkerja2.style.display= "none"
+
+     } else if ( e.value === "die"){
+
+             hidupMatiDiv.style.display = "block";
+             Wrapper.style.display = "block";
+             detailkerja.style.display= "none"
+              detailkerja2.style.display= "block"
+
+     } else {
+              hidupMatiDiv.style.display = "none";
+              Wrapper.style.display = "none";
+    }
+  }
+}
+
+</script>
+</body>
+</html>
